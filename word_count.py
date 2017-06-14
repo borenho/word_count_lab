@@ -1,15 +1,7 @@
-def words(maneno):
-    maneno_dict = {}
-    count = 1
+from collections import Counter
 
-    if len({maneno}) > 1:
-        for neno in maneno:
-            if neno in maneno_dict:
-                count += 1
-                maneno_dict[neno] = 1
-            else:
-                maneno_dict[neno] = 1
-    else:
-        return {maneno: 1}
+
+def words(maneno):
     
-    return maneno_dict
+    return dict(Counter(maneno.replace(',', '').replace('.', '').split()))
+        
